@@ -1,0 +1,28 @@
+<!-- Copyright © Erickson Lopez. MIT License. -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <RootNamespace>EricksonLopez.Printing.Showcase</RootNamespace>
+    <AssemblyName>EricksonLopez.Printing.Showcase</AssemblyName>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing\EricksonLopez.Printing.csproj" />
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing.EscPos\EricksonLopez.Printing.EscPos.csproj" />
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing.EscPos.Imaging\EricksonLopez.Printing.EscPos.Imaging.csproj" />
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing.EscPos.Status\EricksonLopez.Printing.EscPos.Status.csproj" />
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing.Serial\EricksonLopez.Printing.Serial.csproj" />
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing.SignalR\EricksonLopez.Printing.SignalR.csproj" />
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing.Zpl\EricksonLopez.Printing.Zpl.csproj" />
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing.Zpl.Imaging\EricksonLopez.Printing.Zpl.Imaging.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+  </ItemGroup>
+
+</Project>

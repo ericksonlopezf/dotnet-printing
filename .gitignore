@@ -1,0 +1,141 @@
+## =============================================================================
+## Build & Compilation Outputs
+## =============================================================================
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+build/
+bld/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+artifacts/
+artifacts-pack/
+nupkgs/
+Generated_Files/
+
+## =============================================================================
+## Visual Studio & IDEs
+## =============================================================================
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.pidb
+*.booproj
+*.svclog
+*.vsp
+*.vspx
+*.sap
+
+# JetBrains Rider & ReSharper
+.idea/
+*.DotSettings.user
+_ReSharper*/
+*.resharper
+
+# Visual Studio Code
+.vscode/
+
+# Other Editors
+*.swp
+*.swo
+*~
+.ionide/
+
+## =============================================================================
+## NuGet Packages & Caches
+## =============================================================================
+*.nupkg
+*.snupkg
+packages/
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.assets.json
+
+## =============================================================================
+## Testing, Coverage & Benchmarks
+## =============================================================================
+# Test Results & Traces
+TestResults/
+[Tt]est[Rr]esult*/
+*.trx
+*.coverage
+*.coveragexml
+
+# Coverage Reports & Formats
+coverage*.json
+coverage*.xml
+coverage*.info
+coverage*.cobertura.xml
+coverage.opencover.xml
+coverage-report/
+coveragereport/
+
+# Stryker & Mutation Testing
+.stryker-tmp/
+StrykerOutput/
+
+# BenchmarkDotNet
+BenchmarkDotNet.Artifacts/
+benchmarks/pr-results/
+benchmarks/*/BenchmarkDotNet.Artifacts/
+
+## =============================================================================
+## Configuration Overrides & Secrets
+## =============================================================================
+appsettings*.local.json
+appsettings.Development.local.json
+local.settings.json
+*.local.json
+secrets.json
+
+# Certificates & Private Keys (excluding repository strong name key)
+*.pfx
+*.p12
+*.cer
+*.crt
+*.key
+*.pem
+!EricksonLopez.snk
+
+## =============================================================================
+## OS & Environment Specific Files
+## =============================================================================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+.fuse_hidden*
+.directory
+
+## =============================================================================
+## Diagnostics, Crash Dumps & Scratch
+## =============================================================================
+*.dmp
+*.mdmp
+*.crash
+*.stackdump
+scratch/
+temp/
+tmp/
+*.tmp
+*.temp

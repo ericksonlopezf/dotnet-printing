@@ -1,0 +1,11 @@
+# Copyright © Erickson Lopez. MIT License.
+# Global codebase ownership
+* @ericksonlopezf
+
+# Subsystems
+/src/ @ericksonlopezf
+/samples/ @ericksonlopezf
+/tests/ @ericksonlopezf
+/docs/ @ericksonlopezf
+/.github/ @ericksonlopezf
+/scripts/ @ericksonlopezf

@@ -1,0 +1,24 @@
+<!-- Copyright © Erickson Lopez. MIT License. -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <AssemblyName>EricksonLopez.Printing.EscPos.Imaging</AssemblyName>
+    <RootNamespace>EricksonLopez.Printing.EscPos.Imaging</RootNamespace>
+    <PackageId>EricksonLopez.Printing.EscPos.Imaging</PackageId>
+    <Description>High-performance monochrome image processing and raster bit image generator for ESC/POS thermal receipt printers. 100% Native AOT compatible with zero external native dependencies.</Description>
+    <PackageTags>$(CommonPackageTags);thermal-printer;receipt-printer;escpos;esc-pos;raster-graphics;bitmap;dithering;floyd-steinberg;monochrome;native-aot</PackageTags>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EricksonLopez.Printing\EricksonLopez.Printing.csproj" />
+    <ProjectReference Include="..\EricksonLopez.Printing.EscPos\EricksonLopez.Printing.EscPos.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="EricksonLopez.Printing.EscPos.Imaging.Tests" />
+    <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,24 @@
+<!-- Copyright © Erickson Lopez. MIT License. -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <AssemblyName>EricksonLopez.Printing.Zpl.Imaging</AssemblyName>
+    <RootNamespace>EricksonLopez.Printing.Zpl.Imaging</RootNamespace>
+    <PackageId>EricksonLopez.Printing.Zpl.Imaging</PackageId>
+    <Description>High-performance monochrome image processing and ^GF Graphic Field generator for Zebra ZPL II industrial label printers. 100% Native AOT compatible with zero external native dependencies.</Description>
+    <PackageTags>$(CommonPackageTags);zebra;zpl;label-printer;graphic-field;bitmap;monochrome;dithering;floyd-steinberg;native-aot</PackageTags>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EricksonLopez.Printing\EricksonLopez.Printing.csproj" />
+    <ProjectReference Include="..\EricksonLopez.Printing.Zpl\EricksonLopez.Printing.Zpl.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="EricksonLopez.Printing.Zpl.Imaging.Tests" />
+    <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+  </ItemGroup>
+
+</Project>

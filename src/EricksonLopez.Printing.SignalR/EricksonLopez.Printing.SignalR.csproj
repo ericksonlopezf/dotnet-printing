@@ -1,0 +1,29 @@
+<!-- Copyright © Erickson Lopez. MIT License. -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <AssemblyName>EricksonLopez.Printing.SignalR</AssemblyName>
+    <RootNamespace>EricksonLopez.Printing.SignalR</RootNamespace>
+    <PackageId>EricksonLopez.Printing.SignalR</PackageId>
+    <Description>Real-time SignalR hardware print bridge for EricksonLopez.Printing. Dispatches print jobs to local edge printer agents via ASP.NET Core SignalR hubs.</Description>
+    <PackageTags>$(CommonPackageTags);signalr;aspnetcore;websockets;cloud-printing;remote-printing;hardware-bridge;edge-printing;realtime</PackageTags>
+    <IsPackable>true</IsPackable>
+    <IsAotCompatible>false</IsAotCompatible>
+    <EnableTrimAnalyzer>false</EnableTrimAnalyzer>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EricksonLopez.Printing\EricksonLopez.Printing.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="EricksonLopez.Printing.SignalR.Tests" />
+    <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+  </ItemGroup>
+
+</Project>

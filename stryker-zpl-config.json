@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/stryker-mutator/stryker-net/master/src/Stryker.Core/Stryker.Core/StrykerOptionsSchema.json",
+  "stryker-config": {
+    "project": "EricksonLopez.Printing.Zpl.csproj",
+    "test-projects": [
+      "EricksonLopez.Printing.Zpl.Tests.csproj"
+    ],
+    "mutate": [
+      "**/*.cs",
+      "!bin/**",
+      "!obj/**",
+      "!**/*.g.cs",
+      "!**/*.AssemblyInfo.cs"
+    ],
+    "thresholds": {
+      "high": 100,
+      "low": 98,
+      "break": 95
+    },
+    "reporters": [
+      "cleartext",
+      "progress",
+      "html",
+      "json"
+    ],
+    "concurrency": 2
+  }
+}

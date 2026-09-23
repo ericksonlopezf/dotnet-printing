@@ -1,0 +1,27 @@
+<!-- Copyright © Erickson Lopez. MIT License. -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <AssemblyName>EricksonLopez.Printing.EscPos</AssemblyName>
+    <RootNamespace>EricksonLopez.Printing.EscPos</RootNamespace>
+    <PackageId>EricksonLopez.Printing.EscPos</PackageId>
+    <Description>Epson ESC/POS thermal receipt command compiler for .NET. Builds POS receipts, text styles, barcodes (Code128), QR codes, cash drawer triggers, and partial paper cuts with 100% Native AOT compatibility.</Description>
+    <PackageTags>$(CommonPackageTags);thermal-printer;receipt-printer;pos;escpos;esc-pos;epson;barcode;code128;qr-code;cash-drawer;native-aot</PackageTags>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EricksonLopez.Printing\EricksonLopez.Printing.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="EricksonLopez.Printing.EscPos.Tests" />
+    <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" />
+  </ItemGroup>
+
+</Project>

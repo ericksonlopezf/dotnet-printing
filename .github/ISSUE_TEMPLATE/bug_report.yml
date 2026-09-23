@@ -1,0 +1,41 @@
+# Copyright © Erickson Lopez. MIT License.
+name: Bug Report
+description: File an issue or unexpected behavior in EricksonLopez.Printing
+title: "[BUG]: <Title>"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for reporting a bug. Please fill in the details below.
+  - type: input
+    id: version
+    attributes:
+      label: Library Version
+      description: What version of the library are you using? (e.g. 1.2.0)
+    validations:
+      required: true
+  - type: dropdown
+    id: tfm
+    attributes:
+      label: Target Framework
+      options:
+        - .NET 10.0
+        - .NET 9.0
+        - .NET 8.0
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal Reproduction Code
+      description: Provide a minimal C# code snippet demonstrating the problem.
+      render: csharp
+    validations:
+      required: true

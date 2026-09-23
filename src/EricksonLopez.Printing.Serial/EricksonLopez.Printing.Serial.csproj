@@ -1,0 +1,27 @@
+<!-- Copyright © Erickson Lopez. MIT License. -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <AssemblyName>EricksonLopez.Printing.Serial</AssemblyName>
+    <RootNamespace>EricksonLopez.Printing.Serial</RootNamespace>
+    <PackageId>EricksonLopez.Printing.Serial</PackageId>
+    <Description>Serial COM / RS-232 / Virtual COM port transport driver for thermal receipt and label printers.</Description>
+    <PackageTags>$(CommonPackageTags);thermal-printer;serial-port;rs232;com-port;virtual-com;pos;native-aot</PackageTags>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Ports" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EricksonLopez.Printing\EricksonLopez.Printing.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="EricksonLopez.Printing.Serial.Tests" />
+    <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+  </ItemGroup>
+
+</Project>

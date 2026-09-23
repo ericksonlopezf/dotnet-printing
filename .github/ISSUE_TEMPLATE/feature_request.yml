@@ -1,0 +1,31 @@
+# Copyright © Erickson Lopez. MIT License.
+name: Feature Request
+description: Propose a new feature, hardware protocol enhancement, or API improvement
+title: "[FEATURE]: <Title>"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        Thank you for suggesting an improvement!
+        Please review our [ADR Catalog](https://github.com/ericksonlopezf/dotnet-printing/blob/main/docs/adr/README.md)
+        before submitting to ensure your proposal does not conflict with our Native AOT invariants or systematic rejections.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Description
+      description: Is your feature request related to a specific hardware protocol or use case?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution you would like to see implemented.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Approaches
+      description: Any alternative solutions or workarounds you have considered.
