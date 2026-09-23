@@ -1,0 +1,20 @@
+<!-- Copyright © Erickson Lopez. MIT License. -->
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/EricksonLopez.Printing/EricksonLopez.Printing.csproj" />
+    <Project Path="src/EricksonLopez.Printing.EscPos/EricksonLopez.Printing.EscPos.csproj" />
+    <Project Path="src/EricksonLopez.Printing.Zpl/EricksonLopez.Printing.Zpl.csproj" />
+    <Project Path="src/EricksonLopez.Printing.Serial/EricksonLopez.Printing.Serial.csproj" />
+    <Project Path="src/EricksonLopez.Printing.SignalR/EricksonLopez.Printing.SignalR.csproj" />
+    <Project Path="src/EricksonLopez.Printing.EscPos.Imaging/EricksonLopez.Printing.EscPos.Imaging.csproj" />
+    <Project Path="src/EricksonLopez.Printing.Zpl.Imaging/EricksonLopez.Printing.Zpl.Imaging.csproj" />
+    <Project Path="src/EricksonLopez.Printing.EscPos.Status/EricksonLopez.Printing.EscPos.Status.csproj" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/EricksonLopez.Printing.Showcase/EricksonLopez.Printing.Showcase.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/EricksonLopez.Printing.Tests/EricksonLopez.Printing.Tests.csproj" />
+    <Project Path="tests/EricksonLopez.Printing.SignalR.Tests/EricksonLopez.Printing.SignalR.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,84 @@
+# Copyright © Erickson Lopez. MIT License.
+name: Repository Compliance & Standards
+
+on:
+  pull_request:
+    branches: [ main, canonical ]
+  push:
+    branches: [ main, canonical ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compliance-audit:
+    name: Compliance & Policy Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Run Repository Compliance Verifier
+        shell: pwsh
+        run: ./scripts/verify-compliance.ps1
+
+      - name: Verify Document Kebab-Case Naming
+        shell: pwsh
+        run: |
+          $exempt = @('README.md', 'CHANGELOG.md', 'CONTRIBUTING.md', 'CODE_OF_CONDUCT.md', 'SECURITY.md', 'LICENSE', 'SUPPORT.md', 'ROADMAP.md', 'GOVERNANCE.md', 'PULL_REQUEST_TEMPLATE.md')
+          $files = Get-ChildItem -Recurse -Filter *.md | Where-Object { $_.FullName -notmatch '[\\/](\.git|bin|obj|TestResults|StrykerOutput)[\\/]' }
+          $violations = @()
+          foreach ($file in $files) {
+              if ($exempt -contains $file.Name) { continue }
+              if ($file.Name -cne $file.Name.ToLowerInvariant()) {
+                  $violations += "Non-lowercase Markdown file found: $($file.FullName)"
+              }
+              if ($file.Name -match '_') {
+                  $violations += "Underscore in Markdown file name: $($file.FullName)"
+              }
+          }
+          if ($violations.Count -gt 0) {
+              $violations | ForEach-Object { Write-Error $_ }
+              exit 1
+          }
+          Write-Host "All documentation adheres to kebab-case conventions."
+
+      - name: Verify Copyright Headers in C# Files
+        shell: pwsh
+        run: |
+          $csFiles = Get-ChildItem -Recurse -Filter *.cs | Where-Object { $_.FullName -notmatch '[\\/](\.git|bin|obj)[\\/]' }
+          $missingHeader = @()
+          $expected = "// Copyright © Erickson Lopez. MIT License."
+          foreach ($file in $csFiles) {
+              $firstLine = (Get-Content $file.FullName -First 1).Trim()
+              if ($firstLine -ne $expected) {
+                  $missingHeader += "Missing or invalid MIT copyright header: $($file.FullName)"
+              }
+          }
+          if ($missingHeader.Count -gt 0) {
+              $missingHeader | ForEach-Object { Write-Error $_ }
+              exit 1
+          }
+          Write-Host "All $($csFiles.Count) C# files contain the official MIT copyright header."
+
+      - name: Verify Zero Obsolete Usages
+        shell: pwsh
+        run: |
+          $matches = Select-String -Path (Get-ChildItem -Recurse -Filter *.cs | Where-Object { $_.FullName -notmatch '[\\/](\.git|bin|obj)[\\/]' }).FullName -Pattern '\[Obsolete'
+          if ($matches) {
+              $matches | ForEach-Object { Write-Error "Forbidden [Obsolete] attribute: $($_.Path):$($_.LineNumber)" }
+              exit 1
+          }
+          Write-Host "Zero [Obsolete] usages verified across codebase."
+
+      - name: Verify Zero CS1591 Suppressions
+        shell: pwsh
+        run: |
+          $suppressions = Select-String -Path (Get-ChildItem -Recurse -Include *.cs,*.csproj,Directory.Build.props | Where-Object { $_.FullName -notmatch '[\\/](\.git|bin|obj)[\\/]' }).FullName -Pattern 'CS1591|1591'
+          if ($suppressions) {
+              $suppressions | ForEach-Object { Write-Error "Forbidden CS1591 suppression detected: $($_.Path):$($_.LineNumber)" }
+              exit 1
+          }
+          Write-Host "Zero CS1591 suppressions detected."

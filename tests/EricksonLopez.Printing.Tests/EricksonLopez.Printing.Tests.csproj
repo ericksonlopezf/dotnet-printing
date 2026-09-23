@@ -1,0 +1,30 @@
+<!-- Copyright © Erickson Lopez. MIT License. -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Unit tests for EricksonLopez.Printing, EscPos, and Zpl engines.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing\EricksonLopez.Printing.csproj" />
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing.EscPos\EricksonLopez.Printing.EscPos.csproj" />
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing.Zpl\EricksonLopez.Printing.Zpl.csproj" />
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing.EscPos.Imaging\EricksonLopez.Printing.EscPos.Imaging.csproj" />
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing.Zpl.Imaging\EricksonLopez.Printing.Zpl.Imaging.csproj" />
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing.EscPos.Status\EricksonLopez.Printing.EscPos.Status.csproj" />
+    <ProjectReference Include="..\..\src\EricksonLopez.Printing.Serial\EricksonLopez.Printing.Serial.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="System.IO.Ports" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="AwesomeAssertions" />
+    <PackageReference Include="NSubstitute" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/stryker-mutator/stryker-net/master/src/Stryker.Core/Stryker.Core/StrykerOptionsSchema.json",
+  "stryker-config": {
+    "solution": "EricksonLopez.Printing.slnx",
+    "project-info": {
+      "name": "github.com/ericksonlopezf/dotnet-printing",
+      "module": "EricksonLopez.Printing"
+    },
+    "reporters": [
+      "cleartext",
+      "progress",
+      "html",
+      "json"
+    ],
+    "thresholds": {
+      "high": 100,
+      "low": 98,
+      "break": 95
+    },
+    "mutate": [
+      "src/EricksonLopez.Printing/**/*.cs",
+      "src/EricksonLopez.Printing.EscPos/**/*.cs",
+      "src/EricksonLopez.Printing.EscPos.Imaging/**/*.cs",
+      "src/EricksonLopez.Printing.EscPos.Status/**/*.cs",
+      "src/EricksonLopez.Printing.Zpl/**/*.cs",
+      "src/EricksonLopez.Printing.Zpl.Imaging/**/*.cs",
+      "src/EricksonLopez.Printing.SignalR/**/*.cs",
+      "src/EricksonLopez.Printing.Serial/**/*.cs",
+      "!src/**/bin/**",
+      "!src/**/obj/**",
+      "!src/**/AssemblyInfo.cs"
+    ],
+    "test-projects": [
+      "tests/EricksonLopez.Printing.Tests/EricksonLopez.Printing.Tests.csproj",
+      "tests/EricksonLopez.Printing.SignalR.Tests/EricksonLopez.Printing.SignalR.Tests.csproj"
+    ],
+    "coverage-analysis": "perTest",
+    "optimization-mode": "perTestInIsolation",
+    "ignore-mutations": [
+      "linq",
+      "string"
+    ],
+    "concurrency": 2
+  }
+}
